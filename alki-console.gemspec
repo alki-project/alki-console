@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'alki/console/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "alki"
+  spec.name          = "alki-console"
   spec.version       = Alki::Console::VERSION
   spec.authors       = ["Matt Edlefsen"]
   spec.email         = ["matt.edlefsen@gmail.com"]
