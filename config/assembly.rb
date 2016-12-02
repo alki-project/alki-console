@@ -1,10 +1,21 @@
 Alki do
   set :name, 'app'
-  set :console_root do
+  set :default_root do
     root
   end
-  service :run do
+
+  func :run do
+    root_console.start
+  end
+
+  factory :console do
     require 'alki/console/pry_console'
-    Alki::Console::PryConsole.new name, console_root
+    -> (name,root) {
+      Alki::Console::PryConsole.new name, root
+    }
+  end
+
+  service :root_console do
+    console name, default_root
   end
 end
