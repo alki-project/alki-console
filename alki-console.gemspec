@@ -8,8 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Alki::Console::VERSION
   spec.authors       = ["Matt Edlefsen"]
   spec.email         = ["matt.edlefsen@gmail.com"]
-  spec.summary       = %q{Base library for building applications.}
-  spec.description   = %q{Base library for building applications. Provides tools for organizing and connection application units.}
+  spec.summary       = %q{Developer console for Alki applications}
   spec.homepage      = "https://github.com/medlefsen/alki-console"
   spec.license       = "MIT"
 
