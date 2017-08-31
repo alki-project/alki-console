@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'alki/console/wrapper'
+
+Alki::Console::Wrapper.wrap *ARGV
