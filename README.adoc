@@ -1,0 +1,42 @@
+= Alki::Console
+
+Provides a console to work with https://github.com/alki-project/alki[Alki] assemblies.
+Built on https://github.com/pry/pry[Pry].
+
+== Installation
+
+Add this line to your application's Gemfile:
+
+[source,ruby]
+----
+gem 'alki-console'
+----
+
+And then execute:
+
+[source]
+----
+$ bundle --binstubs
+----
+
+== Running
+
+In an Alki project, run `bin/alki-console`. Once run a prompt will be displayed
+and assembly elements will be directly accessible.
+
+.config/assembly.rb
+```ruby
+Alki do
+  group :settings do
+    set :message, 'Hello World'
+  end
+end
+```
+
+```
+$ bin/alki-console
+my-app> settings.message
+=> 'Hello World'
+my-app>
+```
+
