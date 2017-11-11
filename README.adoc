@@ -40,3 +40,33 @@ my-app> settings.message
 my-app>
 ```
 
+== Mounting in Assembly
+
+Alki::Console can be mounted into an Alki Assembly.
+By default it will use the name of the parent assembly
+(or "app" if it doesn't have a name) as the prompt,
+and the parent assembly as the context.
+
+.test.rb
+```ruby
+require 'alki'
+
+assembly = Alki.create_assembly do
+  mount :console, 'alki/console'
+
+  service :http_client do
+    require 'net/http'
+    Net::HTTP
+  end
+end
+
+assembly.new.console.run
+```
+
+```
+$ ruby test.rb
+app> http_client.get URI('http://httpbin.org/uuid')
+=> "{\n  \"uuid\": \"0b6f27a1-bb98-46f5-970d-f5b4fe94f5a7\"\n}\n"
+```
+
+

@@ -19,11 +19,13 @@ module Alki
       end
 
       def self.wrap(dir=Dir.pwd,assembly_name=find_assembly(dir))
+        lib_dir = File.join(dir,'lib')
+        $LOAD_PATH << lib_dir unless $LOAD_PATH.include? lib_dir
         assembly = Alki.load(assembly_name)
         assembly.new do
           mount :_console, 'alki/console' do
-            set :name, assembly_name.gsub('/','-')
-            set :root_group do
+            set :prompt, assembly_name.gsub('/','-')
+            set :context do
               root
             end
           end

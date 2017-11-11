@@ -3,9 +3,9 @@ require 'pry'
 module Alki
   module Console
     class PryConsole
-      def initialize(name, root)
+      def initialize(name, context)
         @name = name
-        @context = root
+        @context = context
       end
 
       def start
