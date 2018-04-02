@@ -1,6 +1,14 @@
 Alki do
+  set :mounted? do
+    respond_to? :parent
+  end
+
   set :prompt do
-    assembly_name&.gsub('/','-') || 'app'
+    if mounted? && parent.assembly_name
+      parent.assembly_name.gsub('/','-')
+    else
+      'app'
+    end
   end
 
   func :run do
@@ -8,7 +16,11 @@ Alki do
   end
 
   set :context do
-    parent
+    if mounted?
+      parent
+    else
+      nil
+    end
   end
 
   tag :main_loop

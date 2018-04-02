@@ -9,8 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Matt Edlefsen"]
   spec.email         = ["matt.edlefsen@gmail.com"]
   spec.summary       = %q{Developer console for Alki applications}
-  spec.homepage      = "https://github.com/medlefsen/alki-console"
+  spec.homepage      = "http://alki.io/projects/alki-console"
   spec.license       = "MIT"
+  spec.required_ruby_version = '>= 2.1.0'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
@@ -18,6 +19,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "alki", "~> 0.13.0"
+  spec.add_dependency "alki", "~> 0.14.0"
   spec.add_dependency "pry", "~> 0.11"
 end

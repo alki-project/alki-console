@@ -1,5 +1,7 @@
 = Alki::Console
 
+image:https://travis-ci.org/alki-project/alki-console.svg?branch=master["Build Status", link="https://travis-ci.org/alki-project/alki-console"]
+
 Provides a console to work with https://github.com/alki-project/alki[Alki] assemblies.
 Built on https://github.com/pry/pry[Pry].
 
